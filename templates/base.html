@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {% block titulo %}{% endblock %}
+    </title>
+    <link rel="shortcut icon" href="static/img/ico.png" type="image/x-icon">
+    <link rel="stylesheet" href="static/css/bootstrap.css">
+    <link rel="stylesheet" href="static/css/mdb.lite.css">
+    <link rel="stylesheet" href="static/css/mdb.css">
+    <link rel="stylesheet" href="static/css/styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Red+Hat+Text:400,500,700&display=swap" rel="stylesheet">
+</head>
+<body>
+    {% include 'others/loader.html' %}
+    {% block contenido %}
+    {% endblock %}
+
+
+    {% include 'others/footer.html' %}
+    <script src="static/js/jquery.js"></script>
+    <script src="static/js/bootstrap.js"></script>
+    <script src="static/js/mdb.js"></script>
+    <script src="static/js/popper.js"></script>
+    <script src="static/js/modules/wow.js"></script>
+    <script src="static/js/modules/scrolling-navbar.min.js"></script>
+    <script src="static/js/dragon.js"></script>
+</body>
+</html>

@@ -1,103 +1,60 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <title>Artistas de la Web | Inicio</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+{% extends 'base.html' %}
+{% block titulo %} DragonEnv {% endblock %}
+{% block contenido %}
+{% from 'macros/menu.html' import menu with context %}
+{{menu(context.menu)}}
+{% include 'others/carousel.html' %}
 
-    <!-- Estilos Css -->
-    <link rel="stylesheet" href="static/css/bootstrap.css">
-    <link rel="stylesheet" href="static/css/mdb.lite.css">
-    <link rel="stylesheet" href="static/css/mdb.css">
-    <link rel="stylesheet" href="static/css/style.css">
+<div class="container contenedor">
+<!-- News jumbotron -->
+<div class="jumbotron text-center hoverable p-4" id="soft">
 
-    <link href="https://fonts.googleapis.com/css?family=Red+Hat+Text:400,500,700&display=swap" rel="stylesheet">
+  <!-- Grid row -->
+  <div class="row">
 
-</head>
-<body>
+    <!-- Grid column -->
+    <div class="col-md-4 offset-md-1 mx-3 my-3">
 
-<div class="loaderenv" id="loaderenv"> 
-  <div class="text-center">
-      Proximamente
-      <br>
-      Dragonenv
+      <!-- Featured image -->
+      <div class="view overlay" >
+        <img src="https://mdbootstrap.com/img/Photos/Others/laptop-sm.jpg" class="img-fluid" alt="Sample image for first version of blog listing">
+        <a>
+          <div class="mask rgba-white-slight"></div>
+        </a>
+      </div>
+
+    </div>
+    <!-- Grid column -->
+
+    <!-- Grid column -->
+    <div class="col-md-7 text-md-left ml-3 mt-3" >
+
+      <!-- Excerpt -->
+      <a href="#!" class="green-text">
+        <h6 class="h6 pb-1"><i class="fas fa-desktop pr-1"></i> DragonEnv.com</h6>
+      </a>
+
+      <h4 class="h4 mb-4">Desarrollo Web  Profesional</h4>
+
+      <p class="font-weight-normal">Contamos con un excelento metodo de diseño y de desarrollo de aplicaciones web ideales para su negocio que se adapta a todas las necesidades; Ya sea un Comercio Electronico, Una App movil, una pagina de informacion y contacto y más.</p>
+      <p class="font-weight-normal">Obtenga un <a><strong>Descuento </strong></a> Consultando.</p>
+
+      <a class="btn btn-success" href="https://api.whatsapp.com/send/?phone=51918466972&text=Hola,%20Busco%20una%20consulta%20personalizada%20para%20crear%20una%20web.&app_absent=0">Contactar</a>
+
+    </div>
+    <!-- Grid column -->
 
   </div>
-  <div class="spinner">
-    <div class="rect1"></div>
-    <div class="rect2"></div>
-    <div class="rect3"></div>
-    <div class="rect4"></div>
-    <div class="rect5"></div>
-  </div>
+  <!-- Grid row -->
+
 </div>
+<!-- News jumbotron -->
 
-<!--Navbar -->
-<nav class="mb-1 navbar navbar-expand-lg navbar-dark default-color">
-  <a class="navbar-brand" href="#">Navbar</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-333"
-    aria-controls="navbarSupportedContent-333" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarSupportedContent-333">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home
-          <span class="sr-only">(current)</span>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Features</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Pricing</a>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown"
-          aria-haspopup="true" aria-expanded="false">Dropdown
-        </a>
-        <div class="dropdown-menu dropdown-default" aria-labelledby="navbarDropdownMenuLink-333">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <a class="dropdown-item" href="#">Something else here</a>
-        </div>
-      </li>
-    </ul>
-
-  </div>
-</nav>
-
-
-<div class="contenedor">
+<div class="multicont">
+{% include 'others/items.html' %}
 
 </div>
 
+</div>
 
-<!-- Footer -->
-<footer class="page-footer font-small  default-color teal">
-
-  <!-- Copyright -->
-  <div class="footer-copyright text-center py-3">© 2020 Copyright:
-    <a href="https://dragonenv.com/"> dragonenv.com</a>
-  </div>
-  <!-- Copyright -->
-
-</footer>
-<!-- Footer -->
-
-
-  <script src="static/js/jquery.js"></script>
-  <script src="static/js/bootstrap.js"></script>
-  <script src="static/js/mdb.js"></script>
-
-  <script src="static/js/popper.js"></script>
-  <script src="static/src/js/free/wow.js"></script>
-
-  <script>
-    $(window).on('load', function() {
-      $('#loaderenvl').delay(1000).fadeOut(300);
-    });
-  </script>
-</body>
-</html>
+{% endblock %}

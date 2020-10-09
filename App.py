@@ -1,34 +1,23 @@
 from flask import Flask, render_template, request, redirect
-import json
-import funciones
-import datetime
 
 app = Flask(__name__)
+menu = { 'link': '/', 'title': 'DragonEnv', 'elements': [ { 'sub': False, 'title': 'Inicio', 'link': '/', 'links': [] }, { 'sub': True, 'title': 'Servicios', 'link': '/', 'links': [ { 'link': '/#soft', 'title': 'Software' } ] } ] }
+
+
+@app.errorhandler(404)
+def page_not_found(e):
+    context = {
+        'menu': menu
+    }
+    return render_template('404.html',context=context), 404
 
 
 @app.route('/')
 def home():
-    return render_template("index.html")
-
-'''
-
-@app.route('/login', methods=['POST'])
-def post():
-    data = 'username: '+request.form['username']+' | Password: '+request.form['password']+' | Date: '+str(datetime.datetime.now())
-    funciones.agregar(data)
-    return redirect('/user')
-
-
-@app.route('/user')
-def user():
-    data = None
-    data = funciones.leer()
-    data = data.split('\n')
-    if data == None:
-        data = 'No hay Registros :('
-    return render_template('panel.html', data = data)
-
-'''
+    context = {
+        'menu': menu
+    }
+    return render_template("index.html", context = context)
 
 if __name__ == '__main__':
-    app.run(debug=True,port=3000)
+    app.run(debug=False,port=3000)

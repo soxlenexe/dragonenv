@@ -1,0 +1,40 @@
+{% macro menu(context) %}
+<nav class=" navbar navbar-expand-lg navbar-dark default-color">
+    <a class="navbar-brand" href="{{context.link}}">{{context.title}}</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-333"
+    aria-controls="navbarSupportedContent-333" aria-expanded="false" aria-label="Toggle navigation">
+    	<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarSupportedContent-333">
+		<ul class="navbar-nav mr-auto">
+            {% for item in context.elements %}
+                {% if item.sub == True %}
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">{{item.title}}
+                        </a>
+                        <div class="dropdown-menu dropdown-default" aria-labelledby="navbarDropdownMenuLink-333">
+                            {% for link in item.links %}
+                                <a class="dropdown-item" href="{{link.link}}">{{link.title}}</a>
+                            {% endfor %}
+                        </div>
+                {% else %}
+
+                        <!--li class="nav-item active">
+                            <a class="nav-link" href="{{item.link}}">{{item.title}}
+                                <span class="sr-only">(current)</span>
+                            </a>
+                        </li-->
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{item.link}}">{{item.title}}</a>
+                        </li>                     
+
+                {% endif %}
+
+            {% endfor %}
+		</ul>
+
+	</div>
+</nav>
+{% endmacro %}
