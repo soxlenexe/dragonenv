@@ -1,0 +1,1 @@
+pm2 start ./App.py --interpreter ./dragonenv.com/bin/python
